@@ -20,7 +20,7 @@ public class IndexSearch {
             // (siehe "predefined classes" an http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
             for(String word: line.split("\\W")) {
                 IndexNode node = rootNode.findNode(word, 0, true);
-                node.values.add(lineNumber);
+                node.references.add(lineNumber);
             }
         }
 
@@ -32,7 +32,7 @@ public class IndexSearch {
                 query = JOptionPane.showInputDialog("Leider nicht gefunden. Versuchen Sie es nochmals. Ihre anfrage?", query);
             } else {
 
-                query = JOptionPane.showInputDialog("Gefunden an Zeilen "+node.values+".\nVersuchen Sie es nochmals. Ihre anfrage?", query);
+                query = JOptionPane.showInputDialog("Gefunden an Zeilen "+node.references +".\nVersuchen Sie es nochmals. Ihre anfrage?", query);
             }
         }
 
@@ -43,7 +43,7 @@ public class IndexSearch {
 class IndexNode {
 
     char character;
-    List values = new ArrayList();
+    List references = new ArrayList();
     List<IndexNode> children = new ArrayList<IndexNode>();
 
     /** Geht durch das Baum, um den Knote für das gegebenes Wort zu finden (möglicherweise gestalten) */
