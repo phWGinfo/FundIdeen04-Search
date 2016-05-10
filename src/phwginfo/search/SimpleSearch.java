@@ -11,6 +11,7 @@ public class SimpleSearch {
         BufferedReader reader = new BufferedReader(new FileReader(new File(new File("data"),"Complete-Shakespeare.txt")));
         String line;
         int lineNumber = 0;
+
         String query = JOptionPane.showInputDialog("Welches Text suchen wir?", "To be or");
         while((line=reader.readLine())!=null) {
             lineNumber++;

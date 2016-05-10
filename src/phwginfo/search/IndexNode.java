@@ -10,7 +10,8 @@ class IndexNode implements Serializable {
     List references = new ArrayList();
     List<IndexNode> children = new ArrayList<IndexNode>();
 
-    /** Geht durch das Baum, um den Knote für das gegebenes Wort zu finden (möglicherweise gestalten) */
+    /** Geht durch das Baum,
+     *  um den Knote für das gegebenes Wort zu finden (möglicherweise gestalten) */
     IndexNode findNode(String text, int posInString, boolean create) {
         if(posInString >= text.length()) {
             // gefunden! Wir sind im guten Objekt, dieses zurückgeben!
